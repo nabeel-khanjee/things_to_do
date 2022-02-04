@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             LogoApp(width: width),
             EmailPasswordFields(width: width, formKey: _formKey),

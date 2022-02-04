@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:things_to_do/Pages/Auth/Widget/login_button.dart';
 import 'package:things_to_do/utils/colors.dart';
 
 class EmailPasswordFields extends StatelessWidget {
@@ -71,27 +72,7 @@ class EmailPasswordFields extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * 0.1),
           child: textFormField2,
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: MaterialButton(
-            minWidth: width - width * 0.2,
-            height: width * 0.15,
-            color: purple1,
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // If the form is valid, display a snackbar. In the real world,
-                // you'd often call a server or save the information in a database.
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Processing Data')),
-                );
-              }
-            },
-            child: const Text('Login',
-                style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
-          ),
-        ),
+        LoginButton(width: width, formKey: _formKey),
       ],
     );
   }
